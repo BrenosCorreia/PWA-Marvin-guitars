@@ -1,0 +1,7 @@
+@import url("/Pages/Style/style.css");
+
+main {
+    background: url("/Pages/img/slider-1-bg.jpg") no-repeat center center;
+    background-size: cover;
+    height: 90vh;
+}
