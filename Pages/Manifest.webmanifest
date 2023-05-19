@@ -1,0 +1,17 @@
+
+{
+    "short_name": "mvguitars",
+    "name": "Marvin Guitars",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "theme-color": "#ffffff",
+    "background_color": "#000000",
+    "background-color": "#000000",
+    "description": "pagina da marvin guitars",
+    "icons": [{
+        "src": "Pages/img/Marvin Guitars.png",
+        "type": "image/png",
+        "sizes": "500x500"
+    }]
+}
