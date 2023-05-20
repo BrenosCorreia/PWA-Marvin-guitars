@@ -10,7 +10,7 @@
     "background-color": "#000000",
     "description": "pagina da marvin guitars",
     "icons": [{
-        "src": "Pages/img/Marvin Guitars.png",
+        "src": "img/maskable.png",
         "type": "image/png",
         "sizes": "500x500"
     }]

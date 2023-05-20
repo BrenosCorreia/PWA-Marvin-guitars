@@ -21,3 +21,33 @@ self.addEventListener('install',function(event){
 self.addEventListener('activate', e=>{
     self.clients.claim()
 })
+
+self.addEventListener('fetch', async e =>{
+    const req = e.request
+    const url = new URL(req.url)
+
+    if(url.login === location.origin){
+        e.respondWith(cacheFirst(req))
+    }else{
+        e.respondWith(networkAndCache)
+    }
+})
+
+async function cacheFirst(req){
+    const cache = await cache.open(cacheName)
+    const cached = await cache.match(req)
+
+    return cached || fetch(req)
+}
+
+async function networkAndCache(req){
+    const cache = await caches.open(cacheName);
+    try{
+        const refresh = await fetch(req)
+        await cache.put(req, fresh.clone())
+        return refresh
+    } catch(e){
+        const cached = await cache.match(req);
+        return cached
+    }
+}
