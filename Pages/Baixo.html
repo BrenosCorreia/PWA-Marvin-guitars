@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,16 +27,83 @@
     </nav>
 </head>
 <main></main>
+
 <body>
     <div class="Baixo">
         <h2><b>Marvin MV4</b></h2>
         <img src="./img/S099baf7d233343d899dbd570b98e99a85.jpg" alt="bass"><br>
 
-        <button id="bass1">
+        <button id="bass1" onclick="ap2()">
             Detalhes
         </button>
-    
-    </div>
 
+        <div id="contem">
+            <ul>
+                <li id="corpo"></li>
+                <li id="braço"></li>
+                <li id="escala"></li>
+                <li id="traste"></li>
+                <li id="tarraxa"></li>
+                <li id="ponte"></li>
+                <li id="captador"></li>
+                <li id="controles"></li>
+
+            </ul>
+
+
+        </div>
+
+    </div>
+    <!-- <script src="./../routes/home1.js"></script> -->
+    <script>
+        const api = 'http://localhost:21263'
+        function ap2() {
+            // let btnApi = document.getElementById('bass1')
+
+            fetch(api)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    // Obter os valores do primeiro item
+                    var primeiroItem = Object.values(data)[0];
+                    console.log(primeiroItem[1])
+
+                    // Acessar os conteúdos do primeiro item
+                    var corpo = primeiroItem[1].Corpo;
+                    var braco = primeiroItem[1].Braço;
+                    var escala = primeiroItem[1].Escala;
+                    var traste = primeiroItem[1].Trastes;
+                    var tarraxa = primeiroItem[1].Tarraxas;
+                    var ponte = primeiroItem[1].Ponte;
+                    var captador = primeiroItem[1].Captadores;
+                    var controle = primeiroItem[1].Controles;
+
+                    var corpohtml = document.getElementById('corpo').innerHTML=`<span class="inst">Corpo: ${corpo}</span>`
+                    var bracohtml = document.getElementById('braço').innerHTML=`<span class="inst">Braço: ${braco}</span>`
+                    var escalahtml = document.getElementById('escala').innerHTML=`<span class="inst">Escala: ${escala}</span>`
+                    var trastetml = document.getElementById('traste').innerHTML=`<span class="inst">Trastes: ${traste}</span>`
+                    var tarraxahtml = document.getElementById('tarraxa').innerHTML=`<span class="inst">Tarraxas: ${tarraxa}</span>`
+                    var pontehtml = document.getElementById('ponte').innerHTML=`<span class="inst">Ponte: ${ponte}</span>`
+                    var captadorhtml = document.getElementById('captador').innerHTML=`<span class="inst">Captadores: ${captador}</span>`
+                    var controlehtml = document.getElementById('controles').innerHTML=`<span class="inst">Controles: ${controle}</span>`
+
+
+                    // Etc.
+
+                    // Fazer algo com os conteúdos do primeiro item
+                    console.log(corpo, braco, escala,traste,tarraxa,ponte,captador,controle);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        };
+
+
+
+    
+
+    </script>
 </body>
+
 </html>

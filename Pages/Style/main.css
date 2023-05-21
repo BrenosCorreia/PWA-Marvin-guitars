@@ -1,50 +1,56 @@
 @import url("/Pages/Style/style.css");
 
-main {
-    background: url("/Pages/img/slider-1-bg.jpg") no-repeat center center;
-    background-size: cover;
-    height: 90vh;
-}
-
-
-
-
-body{
-    
-    background-color: #232323;
-}
-
-h2{
-  color: aliceblue;
+.inst{
+  color:aliceblue;
+  font-size: 20px;
+  
 }
 
 #bass1{
+  padding: 10px 15px;
+}
+
+
+
+body {
+  background: url("/Pages/img/slider-1-bg.jpg") no-repeat center center;
+  background-size: cover;
+  
+
+  /* background-color: #232323; */
+}
+
+h2 {
+  color: aliceblue;
+}
+
+#bass1 {
   right: 100%;
 }
 
-img{
-    width: 30%;
+img {
+  width: 30%;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Estilos para o layout de duas colunas */
+/* Estilos para o layout de duas colunas */
+.container {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 600px) {
   .container {
-    display: flex;
+    flex-direction: column;
   }
-
-  .column {
-    flex: 1;
-    padding: 20px;
-  }
-
-  /* Estilos para telas menores */
-  @media screen and (max-width: 600px) {
-    .container {
-      flex-direction: column;
-    }
 }
